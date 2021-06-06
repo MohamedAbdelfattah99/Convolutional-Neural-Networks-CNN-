@@ -30,7 +30,7 @@ def training():
     model.add(layers.Dense(512, activation='relu'))
     model.add(layers.Dense(10))
     
-    model.compile(optimizer='adam',
+    model.compile(optimizer='',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
     history = model.fit(train_X, train_y, epochs=3, validation_data=(test_X[1:10000], test_y[1:10000]))
