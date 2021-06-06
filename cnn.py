@@ -33,7 +33,7 @@ def training():
     model.compile(optimizer='',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
-    history = model.fit(train_X, train_y, epochs=3, validation_data=(test_X[1:10000], test_y[1:10000]))
+    history = model.fit(train_X, train_y, epochs=3, validation_data=(test_X, test_y))
 
     test_loss, test_acc = model.evaluate(test_X,  test_y, verbose=2)
     train_loss, train_acc = model.evaluate(train_X,  train_y, verbose=2)
